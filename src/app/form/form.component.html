@@ -1,15 +1,39 @@
-<form class="container">
-    <div class="form-group">
-        <label for="quote">What's you quote</label>
-        <textarea name="quote" id="quote" cols="30" rows="10" required></textarea>
-    </div>
-    <div class="form-group">
-        <label for="author">Author</label>
-        <input type="text" required placeholder="Who is the Author?">
-    </div>
-    <div class="form-group">
-        <label for="submiter">Person Submitting</label>
-        <input type="text" required placeholder="Who's Submitting the Quote?">
-    </div>
-    <button class="btn btn-primary">Submit</button>
+<form class="container" #quoteForm="ngForm" (ngSubmit)="submitQuote()">
+  <div class="form-group">
+    <label for="quote">What's you quote</label>
+    <textarea
+      name="quote"
+      id="quote"
+      cols="30"
+      rows="10"
+      required
+      [(ngModel)]="enterQuote.quote"
+    ></textarea>
+    {{ enterQuote.quote }}
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input
+      type="text"
+      id="author"
+      required
+      placeholder="Who is the Author?"
+      [(ngModel)]="enterQuote.author"
+      name="author"
+    />
+    {{ enterQuote.author }}
+  </div>
+  <div class="form-group">
+    <label for="submiter">Person Submitting</label>
+    <input
+      type="text"
+      id="submitter"
+      required
+      placeholder="Who's Submitting the Quote?"
+      [(ngModel)]="enterQuote.submitter"
+      name="submitter"
+    />
+    {{ enterQuote.submitter }}
+  </div>
+  <button class="btn btn-primary">Submit</button>
 </form>
