@@ -11,6 +11,6 @@ export class SubmissionService {
   constructor(private _http: HttpClient) { }
 
   submit(quote: Quotes){
-    this._http.post<any>(this._url, quote) 
+    return this._http.post<any>(this._url, quote) 
   }
 }
