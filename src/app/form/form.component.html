@@ -1,39 +1,44 @@
-<form class="container" #quoteForm="ngForm" (ngSubmit)="submitQuote()">
-  <div class="form-group">
-    <label for="quote">What's you quote</label>
-    <textarea
-      name="quote"
-      id="quote"
-      cols="30"
-      rows="10"
-      required
-      [(ngModel)]="enterQuote.quote"
-    ></textarea>
-    {{ enterQuote.quote }}
-  </div>
-  <div class="form-group">
-    <label for="author">Author</label>
-    <input
-      type="text"
-      id="author"
-      required
-      placeholder="Who is the Author?"
-      [(ngModel)]="enterQuote.author"
-      name="author"
-    />
-    {{ enterQuote.author }}
-  </div>
-  <div class="form-group">
-    <label for="submiter">Person Submitting</label>
-    <input
-      type="text"
-      id="submitter"
-      required
-      placeholder="Who's Submitting the Quote?"
-      [(ngModel)]="enterQuote.submitter"
-      name="submitter"
-    />
-    {{ enterQuote.submitter }}
-  </div>
-  <button class="btn btn-primary">Submit</button>
-</form>
+<div class="container-fluid">
+  <h2>If it inspires you, it will inspire another</h2>
+  <form #quoteForm="ngForm">
+    <div class="form-group">
+      <label>What's you quote?</label>
+      <textarea
+        name="quote"
+        id="quote"
+        class="form-control"
+        #quote="ngModel"
+        [class.is-invalid]="quote.invalid && quote.touched"
+        [(ngModel)]="enterQuote.quote"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label>Quote Author</label>
+      <input
+        type="text"
+        name="author"
+        id="author"
+        class="form-control"
+        [(ngModel)]="enterQuote.author"
+        #author="ngModel"
+        [class.is-invalid]="author.invalid && author.touched"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>Quote Submitter</label>
+      <input
+        type="text"
+        name="submitter"
+        id="submitter"
+        class="form-control"
+        [(ngModel)]="enterQuote.submitter"
+        #submitter="ngModel"
+        [class.is-invalid]="submitter.invalid && submitter.touched"
+        required
+      />
+    </div>
+    <button class="btn btn-primary">Submit Quote</button>
+  </form>
+</div>
