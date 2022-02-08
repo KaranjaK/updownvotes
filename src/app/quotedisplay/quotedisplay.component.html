@@ -1,1 +1,20 @@
-<p>quotedisplay works!</p>
+<div *ngFor="let out of quoteDisplay" class="card show">
+  <div>
+    <h2 class="card-body">{{ out.quote }}</h2>
+    <div (mouseenter)="showDetails = true" (mouseleave)="showDetails = false">
+      See More
+      <div *ngIf="showDetails">
+        <p id="author">Author ~ {{ out.author }} ~</p>
+        <p id="submitter">Submitted By: {{ out.submitter }}</p>
+        <div>
+          <p>Upvotes: {{ upvotes }} Downvotes: {{ downvotes }}</p>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-success" (click)="upVotes()">Upvote</button>
+        <button class="btn btn-warning" (click)="downVotes()">Downvote</button>
+        <button class="btn btn-danger" (click)="deleteQuote()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

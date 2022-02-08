@@ -8,7 +8,6 @@ import { QuotedisplayComponent } from './quotedisplay/quotedisplay.component';
 import { QuotedetailsComponent } from './quotedetails/quotedetails.component';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from './date.pipe';
-// import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +21,6 @@ import { DatePipe } from './date.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    // HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

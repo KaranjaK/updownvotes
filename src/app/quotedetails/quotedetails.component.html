@@ -1,1 +1,6 @@
-<p>quotedetails works!</p>
+<div *ngFor="let out of quotedetails" class="card show">
+    <div>
+      <p id="author">Author ~ {{ out.author }} ~</p>
+      <p id="submitter">Submitted By: {{ out.submitter }}</p>
+    </div>
+  </div>
