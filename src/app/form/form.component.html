@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()" novalidate>
+  <form #quoteForm="ngForm" *ngIf="!submitted" (ngSubmit)="submitQuote()" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
       <textarea
