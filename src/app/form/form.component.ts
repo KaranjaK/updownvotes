@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quotes } from '../quotes';
+import { SubmissionService } from '../submission.service';
 
 @Component({
   selector: 'app-form',
@@ -14,7 +15,7 @@ export class FormComponent implements OnInit {
   submitQuote(){
     this.addQuote.emit(this.enterQuote)
   }
-  constructor() { }
+  constructor(private _submissionService: SubmissionService) { }
 
   ngOnInit(): void {
   }
