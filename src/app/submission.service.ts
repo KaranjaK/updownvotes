@@ -7,7 +7,7 @@ import { Quotes } from './quotes';
 })
 export class SubmissionService {
 
-  _url = ''
+  _url = 'http://localhost:3000/quote'
   constructor(private _http: HttpClient) { }
 
   submit(quote: Quotes){
