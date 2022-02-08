@@ -1,2 +1,6 @@
 <app-form (addQuote)="addNewQuote($event)"></app-form>
+<div *ngFor="let out of quotes">
+    {{ out.quote }}
+</div>
+
 <router-outlet></router-outlet>
