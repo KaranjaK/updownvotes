@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'updownvotes';
 
   quotes: Quotes[]=[
-    new Quotes ("Yes we can", "Barack Obama", "Kelvi Karanja")
+    new Quotes ("Yes we can", "Barack Obama", "Kelvin Karanja")
   ]
 
   addNewQuote (quote: any){
