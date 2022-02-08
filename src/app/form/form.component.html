@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()">
+  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
       <textarea
@@ -42,6 +42,6 @@
       />
       <small class="text-danger" [class.d-none]= 'submitter.valid || submitter.untouched'>Submitter is Required</small>
     </div>
-    <button class="btn btn-primary">Submit Quote</button>
+    <button class="btn btn-primary" ng-click='reset()'>Submit Quote</button>
   </form>
 </div>
