@@ -8,4 +8,12 @@ import { Quotes } from './quotes'
 })
 export class AppComponent {
   title = 'updownvotes';
+
+  quotes: Quotes[]=[
+    new Quotes ("Yes we can", "Barack Obama", "Kelvi Karanja")
+  ]
+
+  addNewQuote (quote: any){
+    this.quotes.push(quote)
+  }
 }
