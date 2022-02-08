@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_BOOTSTRAP_LISTENER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     FormComponent,
     QuotedisplayComponent,
-    QuotedetailsComponent
+    QuotedetailsComponent,
   ],
   imports: [
     BrowserModule,
