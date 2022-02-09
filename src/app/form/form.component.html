@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteForm="ngForm" *ngIf="!submitted" (ngSubmit)="submitQuote()" novalidate>
+  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
       <textarea
@@ -9,7 +9,7 @@
         class="form-control"
         #quote="ngModel"
         [class.is-invalid]="quote.invalid && quote.touched"
-        [(ngModel)]="enterQuote.quote"
+        [(ngModel)]="quote"
         required
       ></textarea>
       <small class="text-danger" [class.d-none]='quote.valid || quote.untouched'>Quote is Required</small>
@@ -21,7 +21,7 @@
         name="author"
         id="author"
         class="form-control"
-        [(ngModel)]="enterQuote.author"
+        [(ngModel)]="author"
         #author="ngModel"
         [class.is-invalid]="author.invalid && author.touched"
         required
@@ -35,13 +35,13 @@
         name="submitter"
         id="submitter"
         class="form-control"
-        [(ngModel)]="enterQuote.submitter"
+        [(ngModel)]="submitter"
         #submitter="ngModel"
         [class.is-invalid]="submitter.invalid && submitter.touched"
         required
       />
       <small class="text-danger" [class.d-none]= 'submitter.valid || submitter.untouched'>Submitter is Required</small>
     </div>
-    <button class="btn btn-primary" ng-click='reset()'>Submit Quote</button>
+    <button type="submit" class="btn btn-primary" ng-click='reset()'>Submit Quote</button>
   </form>
 </div>

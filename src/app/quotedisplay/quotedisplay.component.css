@@ -1,19 +1,17 @@
-.show{
-    text-align: center;
-    width: 20rem;
-    height: 18rem;
-    margin: 2rem 1rem;
-    border: none;
-     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+.show {
+  text-align: center;
+  width: 20rem;
+  height: 18rem;
+  margin: 2rem 1rem;
+  border: none;
 }
-h2{
-    font-family: Lobster;
+h2 {
+  font-family: Lobster;
 }
-.buttons{
-    margin: 1rem;
+.buttons {
+  margin: 1rem;
 }
-.btn-success, .btn-warning{
-    margin-right: 1rem;
+.btn-success,
+.btn-warning {
+  margin-right: 1rem;
 }

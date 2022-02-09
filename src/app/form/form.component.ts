@@ -13,15 +13,26 @@ export class FormComponent implements OnInit {
 
   submitted = false;
 
-  enterQuote = new Quotes(0,'', '', '', 0,0, new Date(), false);
-  @Output() addQuote = new EventEmitter<Quotes>();
-  submitQuote() {
-    this.submitted = true;
-    this._submissionservice.submit(this.enterQuote)
-    .subscribe(
-      data => console.log('Success', data),
-      error => console.error('error', error)
-    )
+  @Output() addQuote = new EventEmitter();
+  quote!: string;
+  author!: string;
+  submitter!: string;
+  enterQuote: any;
+  // submitQuote() {
+  //   this.submitted = true;
+  //   this._submissionservice.submit(this.enterQuote)
+  //   .subscribe(
+  //     data => console.log('Success', data),
+  //     error => console.error('error', error)
+  //   )
+  // }
+
+  submitQuote(){
+    this.enterQuote = new Quotes (this.quote,this.author,this.submitter)
+    this.quote = ''
+    this.author = ''
+    this.submitter = ''
+    this.addQuote.emit(this.enterQuote)
   }
   constructor(private _submissionservice: SubmissionService) { }
 

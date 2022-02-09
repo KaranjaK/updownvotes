@@ -13,26 +13,44 @@ export class QuotedisplayComponent implements OnInit {
   @Input() quoteDisplay: any;
   @Input() upvotes=0;
   @Input() downvotes=0;
-  quotes!: Quotes[];
+  quotes = [new Quotes('Yes we can', 'Barrack Obama','KelvinK')];
 
-  dataShow: any;
+  highestVote!: number;
+  voteNumber!: number;
+  voteCounter!: number;
+
   showDetails: boolean;
   constructor(private _submissionservice: SubmissionService) {
     this.showDetails=false
    }
 
-   displayDetails(){
+   displayDetails(addQuote: Quotes){
+     this.quotes.push(addQuote)
    }
 
-   upVotes(){
-     this.upvotes++
+   upVotes(i:number){
+     this.quotes[i].upvotes++
    }
-   downVotes(){
-     this.downvotes++
+   downVotes(i:number){
+     this.quotes[i].downvotes++
    }
-   deleteQuote(){
-     this.quotes.splice
+   deleteQuote(i: number){
+     this.quotes.splice(i,1)
    }
+
+   favoriteQuote(){
+     this.highestVote = 0
+     this.voteNumber = 0
+
+     for(this.voteCounter=0; this.voteCounter < this.quotes.length; this.voteCounter){
+       this.voteNumber = this.quotes[this.voteCounter].upvotes;
+       if(this.voteNumber > this.highestVote){
+         this.highestVote = this.voteNumber
+       }
+     }
+     return this.highestVote
+   }
+
   ngOnInit(): void {
   }
 
