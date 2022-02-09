@@ -5,7 +5,7 @@
 
   <app-form (addQuote)="displayDetails($event)"></app-form>
 
-  <div *ngFor="let out of quoteDisplay; let i = index" class="card show">
+  <div *ngFor="let out of quotes; let i = index" class="card show">
     <div>
       <h2
         appHighlight
@@ -17,25 +17,27 @@
       <h2 *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">
         {{ out.quote }}
       </h2>
-        <div *ngIf="showDetails">
-          <p id="author">Author ~ {{ out.author }} ~</p>
-          <p id="submitter">Submitted By: {{ out.submitter }}</p>
-          <div>
-            <p>Upvotes: {{ upvotes }} Downvotes: {{ downvotes }}</p>
-          </div>
-
-          <app-quotedetails [quotes]="out"></app-quotedetails>
-
-          <div class="buttons">
-            <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
-            <button class="btn btn-warning" (click)="downVotes(i)">
-              Downvote
-            </button>
-            <button class="btn btn-danger" (click)="deleteQuote(i)">
-              Delete
-            </button>
-          </div>
+      (mouseente)="showDetails = true" (mouseleave)="showDetails = false"> See
+      More
+      <div *ngIf="showDetails">
+        <p id="author">Author ~ {{ out.author }} ~</p>
+        <p id="submitter">Submitted By: {{ out.submitter }}</p>
+        <div>
+          <p>Upvotes: {{ upvotes }} Downvotes: {{ downvotes }}</p>
         </div>
+
+        <app-quotedetails [quote]="out"></app-quotedetails>
+
+        <div class="buttons">
+          <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
+          <button class="btn btn-warning" (click)="downVotes(i)">
+            Downvote
+          </button>
+          <button class="btn btn-danger" (click)="deleteQuote(i)">
+            Delete
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
