@@ -1,5 +1,5 @@
-# {Up and Down Vote}
-#### {Simply add, vote for or against and delete quotes}, {February 2021}
+# Up and Down Vote
+#### Simply add, vote for or against and delete quote, February 2021
 #### By *Kelvin Karanja*
 ## Description
 The system provides a chance for one to add a quote they like.

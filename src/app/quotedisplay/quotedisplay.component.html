@@ -17,8 +17,6 @@
       <h2 *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">
         {{ out.quote }}
       </h2>
-      (mouseente)="showDetails = true" (mouseleave)="showDetails = false"> See
-      More
       <div *ngIf="showDetails">
         <p id="author">Author ~ {{ out.author }} ~</p>
         <p id="submitter">Submitted By: {{ out.submitter }}</p>
@@ -26,7 +24,7 @@
           <p>Upvotes: {{ upvotes }} Downvotes: {{ downvotes }}</p>
         </div>
 
-        <app-quotedetails [quote]="out"></app-quotedetails>
+        <!-- <app-quotedetails [quote]="out"></app-quotedetails> -->
 
         <div class="buttons">
           <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
