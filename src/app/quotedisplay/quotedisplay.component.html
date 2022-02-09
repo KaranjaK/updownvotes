@@ -6,25 +6,10 @@
   <app-form (addQuote)="displayDetails($event)"></app-form>
 
   <div *ngFor="let out of quotes; let i = index" class="card show">
-    <div>
-      <h2
-        appHighlight
-        *ngIf="favoriteQuote() === out.upvotes && out.upvotes > 0"
-        class="card-body"
-      >
-        {{ out.quote }}
-      </h2>
-      <h2 *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">
-        {{ out.quote }}
-      </h2>
-      <div *ngIf="showDetails">
-        <p id="author">Author ~ {{ out.author }} ~</p>
-        <p id="submitter">Submitted By: {{ out.submitter }}</p>
-        <div>
-          <p>Upvotes: {{ upvotes }} Downvotes: {{ downvotes }}</p>
-        </div>
+      <!-- <p appHighlight *ngIf="favoriteQuote() === out.upvotes && out.upvotes > 0" class="card-body" >{{ out.quote }} </p>
+      <p *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">{{ out.quote }}</p> -->
 
-        <!-- <app-quotedetails [quote]="out"></app-quotedetails> -->
+        <app-quotedetails [quote]="out"></app-quotedetails>
 
         <div class="buttons">
           <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
@@ -35,7 +20,5 @@
             Delete
           </button>
         </div>
-      </div>
     </div>
-  </div>
 </div>
