@@ -1,4 +1,7 @@
 export class Quotes {
+    toBeTruthy(): any {
+      throw new Error('Method not implemented.');
+    }
 
     public upvotes: number;
     public downvotes: number;
