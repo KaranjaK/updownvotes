@@ -6,11 +6,18 @@ import { Quotes } from './quotes';
   providedIn: 'root'
 })
 export class SubmissionService {
+  get<T>() {
+    throw new Error('Method not implemented.');
+  }
 
   _url = 'http://localhost:3000/quote'
-  constructor(private _http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   submit(quote: Quotes){
-    return this._http.post<any>(this._url, quote) 
+    return this.http.post<any>(this._url, quote) 
+  }
+
+  getQuote(quote: Quotes){
+    return this.http.get<any>(this._url)
   }
 }
