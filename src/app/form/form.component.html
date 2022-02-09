@@ -1,47 +1,18 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()" novalidate>
+  <form #quoteFxorm="ngForm" (ngSubmit)="submitQuote()" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
-      <textarea
-        name="quote"
-        id="quote"
-        class="form-control"
-        #quote="ngModel"
-        [class.is-invalid]="quote.invalid && quote.touched"
-        [(ngModel)]="quote"
-        required
-      ></textarea>
-      <small class="text-danger" [class.d-none]='quote.valid || quote.untouched'>Quote is Required</small>
+      <textarea name="quote" class="form-control" id="quote" [(ngModel)]="quote" placeholder="What is that inspiring quote?"></textarea>
     </div>
     <div class="form-group">
       <label>Quote Author</label>
-      <input
-        type="text"
-        name="author"
-        id="author"
-        class="form-control"
-        [(ngModel)]="author"
-        #author="ngModel"
-        [class.is-invalid]="author.invalid && author.touched"
-        required
-      />
-      <small class="text-danger" [class.d-none]= 'author.valid || author.untouched'>Author is Required</small>
+      <input type="text" name="author" class="form-control" id="author" [(ngModel)]="author" placeholder="Who gave or said this quote?"/>
     </div>
     <div class="form-group">
       <label>Quote Submitter</label>
-      <input
-        type="text"
-        name="submitter"
-        id="submitter"
-        class="form-control"
-        [(ngModel)]="submitter"
-        #submitter="ngModel"
-        [class.is-invalid]="submitter.invalid && submitter.touched"
-        required
-      />
-      <small class="text-danger" [class.d-none]= 'submitter.valid || submitter.untouched'>Submitter is Required</small>
+      <input type="text" name="submitter" class="form-control" id="submitter" [(ngModel)]="submitter" placeholder="Who is submitting the quote?" />
     </div>
-    <button type="submit" class="btn btn-primary" ng-click='reset()'>Submit Quote</button>
+    <button type="submit" class="btn btn-primary" onclick="reset()">Submit Quote</button>
   </form>
 </div>
