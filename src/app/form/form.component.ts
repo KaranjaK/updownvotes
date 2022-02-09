@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
   enterQuote = new Quotes(0,'', '', '', 0,0, new Date(), false);
   @Output() addQuote = new EventEmitter<Quotes>();
   submitQuote() {
-    this.submitted = true
+    this.submitted = true;
     this._submissionservice.submit(this.enterQuote)
     .subscribe(
       data => console.log('Success', data),
