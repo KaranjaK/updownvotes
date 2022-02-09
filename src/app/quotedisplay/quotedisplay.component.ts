@@ -3,7 +3,6 @@ import { Quotes } from '../quotes';
 import { SubmissionService } from '../submission.service';
 
 
-
 @Component({
   selector: 'app-quotedisplay',
   templateUrl: './quotedisplay.component.html',

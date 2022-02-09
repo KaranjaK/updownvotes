@@ -1,18 +1,40 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteFxorm="ngForm" (ngSubmit)="submitQuote()" novalidate>
+  <form #quoteFxorm="ngForm" (ngSubmit)="submitQuote()" #thisForm="ngForm" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
-      <textarea name="quote" class="form-control" id="quote" [(ngModel)]="quote" placeholder="What is that inspiring quote?"></textarea>
+      <textarea
+        name="quote"
+        class="form-control"
+        id="quote"
+        [(ngModel)]="enterQuote.quote"
+        placeholder="What is that inspiring quote?"
+      ></textarea>
     </div>
     <div class="form-group">
       <label>Quote Author</label>
-      <input type="text" name="author" class="form-control" id="author" [(ngModel)]="author" placeholder="Who gave or said this quote?"/>
+      <input
+        type="text"
+        name="author"
+        class="form-control"
+        id="author"
+        [(ngModel)]="enterQuote.author"
+        placeholder="Who gave or said this quote?"
+      />
     </div>
     <div class="form-group">
       <label>Quote Submitter</label>
-      <input type="text" name="submitter" class="form-control" id="submitter" [(ngModel)]="submitter" placeholder="Who is submitting the quote?" />
+      <input
+        type="text"
+        name="submitter"
+        class="form-control"
+        id="submitter"
+        [(ngModel)]="enterQuote.submitter"
+        placeholder="Who is submitting the quote?"
+      />
     </div>
-    <button type="submit" class="btn btn-primary" onclick="reset()">Submit Quote</button>
+    <button type="submit" class="btn btn-primary" onsubmit="reset()">
+      Submit Quote
+    </button>
   </form>
 </div>

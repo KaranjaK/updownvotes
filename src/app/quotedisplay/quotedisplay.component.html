@@ -2,23 +2,17 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-dark content">
     Let's inspire
   </nav>
-
+  
   <app-form (addQuote)="displayDetails($event)"></app-form>
-
-  <div *ngFor="let out of quotes; let i = index" class="card show">
-      <!-- <p appHighlight *ngIf="favoriteQuote() === out.upvotes && out.upvotes > 0" class="card-body" >{{ out.quote }} </p>
-      <p *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">{{ out.quote }}</p> -->
-
-        <app-quotedetails [quote]="out"></app-quotedetails>
-
-        <div class="buttons">
-          <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
-          <button class="btn btn-warning" (click)="downVotes(i)">
-            Downvote
-          </button>
-          <button class="btn btn-danger" (click)="deleteQuote(i)">
-            Delete
-          </button>
-        </div>
+  <h2>Explore more Quotes</h2>
+  <div class="yea">
+    <div *ngFor="let out of quotes; let i = index" class="show">
+      <app-quotedetails [quote]="out"></app-quotedetails>
+      <div class="buttons">
+        <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
+        <button class="btn btn-warning" (click)="downVotes(i)">Downvote</button>
+        <button class="btn btn-danger" (click)="deleteQuote(i)">Delete</button>
+      </div>
     </div>
+  </div>
 </div>

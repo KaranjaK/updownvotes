@@ -1,39 +1,27 @@
-* {
+*{
   overflow-x: hidden;
-  width: 100%;
 }
 h2{
-    font-family: Lobster;
+  font-family: Lobster;
+  margin: 2rem;
+  text-align: center;
+  font-size: 3rem;
 }
-.all{
-    width: 100%;
+.yea{
+  display: grid;
+  grid-template-columns: 30rem 1fr;
 }
 .content{
-    font-family: "Tangerine", serif;
-    font-size: 5rem;
-    color: whitesmoke;
+  font-family: Tangerine;
+  color: whitesmoke;
+  font-size: 3rem;
 }
-.output{
-    padding: 6rem 2rem 4rem 2rem;
-    text-align: center;
-    width: 30rem; 
-    display: table-cell;    
-}
-
-.show {
+.show{
+  padding-left: 6rem;
+  padding-top: 2rem;
+  width: 30rem;
   text-align: center;
-  width: 20rem;
-  height: 20rem;
-  margin: 2rem 1rem;
-  border: none;
 }
-h2 {
-  font-family: Lobster;
-}
-.buttons {
+.btn{
   margin: 1rem;
-}
-.btn-success,
-.btn-warning {
-  margin-right: 1rem;
 }

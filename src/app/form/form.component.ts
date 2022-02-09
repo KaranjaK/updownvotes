@@ -1,26 +1,25 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Quote } from '@angular/compiler';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Quotes } from '../quotes';
 import { SubmissionService } from '../submission.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
+
 export class FormComponent implements OnInit {
 
-  submitted = false;
-
-  @Output() addQuote = new EventEmitter();
+ 
   quote!: string;
   author!: string;
   submitter!: string;
-  enterQuote: any;
-  submitQuote(){
-    this.enterQuote = new Quotes (this.quote,this.author,this.submitter)
-    this.quote = ''
-    this.author = ''
-    this.submitter = ''
+  enterQuote = new Quotes('', '', '');
+  @Output() addQuote = new EventEmitter<Quotes>();
+  submitQuote() {
     this.addQuote.emit(this.enterQuote)
   }
   constructor(private _submissionservice: SubmissionService) { }
