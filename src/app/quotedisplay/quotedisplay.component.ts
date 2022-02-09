@@ -1,6 +1,7 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Quotes } from '../quotes';
 import { SubmissionService } from '../submission.service';
+
 
 
 @Component({
@@ -13,7 +14,11 @@ export class QuotedisplayComponent implements OnInit {
   @Input() quoteDisplay: any;
   @Input() upvotes=0;
   @Input() downvotes=0;
-  quotes = [new Quotes('Yes we can', 'Barrack Obama','KelvinK')];
+  quotes = [new Quotes('Yes we can', 'Barrack Obama','KelvinK'),
+  new Quotes('I have a dream', 'Martin Luther Kind Jnr.','Marcus Kim'),
+  new Quotes('No human is limited', 'Eliud Kipchoge','Jemutai Melanie'),
+  new Quotes('Arise and Shine', 'Prophet Isaiah','Rev. T. D. Jakes')
+];
 
   highestVote!: number;
   voteNumber!: number;
