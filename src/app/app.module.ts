@@ -7,8 +7,8 @@ import { FormComponent } from './form/form.component';
 import { QuotedisplayComponent } from './quotedisplay/quotedisplay.component';
 import { QuotedetailsComponent } from './quotedetails/quotedetails.component';
 import { FormsModule } from '@angular/forms';
-import { DatePipe } from './date.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { TimeLapsePipe } from './time-lapse.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     QuotedisplayComponent,
     QuotedetailsComponent,
-    DatePipe,
+    TimeLapsePipe,
   ],
   imports: [
     BrowserModule,
