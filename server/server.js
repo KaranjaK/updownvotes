@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/quote', function(req, res){
-    console.log(req.body)
+    alert(req.body)
     res.status(200).send({'message': 'Data received'})
 })
 
