@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Quotes } from '../quotes';
+import { SubmissionService } from '../submission.service';
 
 
 @Component({
@@ -14,9 +15,13 @@ export class QuotedisplayComponent implements OnInit {
   @Input() downvotes=0;
   quotes!: Quotes[];
 
+  dataShow: any;
   showDetails: boolean;
-  constructor() {
+  constructor(private _submissionservice: SubmissionService) {
     this.showDetails=false
+   }
+
+   displayDetails(){
    }
 
    upVotes(){
