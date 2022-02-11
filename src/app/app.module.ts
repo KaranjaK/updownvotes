@@ -9,6 +9,7 @@ import { QuotedetailsComponent } from './quotedetails/quotedetails.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TimeLapsePipe } from './time-lapse.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { TimeLapsePipe } from './time-lapse.pipe';
     QuotedisplayComponent,
     QuotedetailsComponent,
     TimeLapsePipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
