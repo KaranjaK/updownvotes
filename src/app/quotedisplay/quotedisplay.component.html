@@ -1,33 +1,40 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark content">
+  <div class="content">
     Let's inspire
-  </nav>
+  </div>
 
-  <app-form (addQuote)="displayDetails($event)"></app-form>
-  <h2>Explore more Quotes</h2>
-  <div class="yea">
-    <div *ngFor="let out of quotes; let i = index" class="show">
-      <div>
-        <p
-          appHighlight
-          *ngIf="favoriteQuote() === out.upvotes && out.upvotes > 0"
-        >
-          <app-quotedetails [quote]="out"></app-quotedetails>
-        </p>
-        <p *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">
-          <app-quotedetails [quote]="out"></app-quotedetails>
-        </p>
-        
-        <div class="buttons">
-          <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
-          <button class="btn btn-warning" (click)="downVotes(i)">
-            Downvote
-          </button>
-          <button class="btn btn-danger" (click)="deleteQuote(i)">
-            Delete
-          </button>
+  <div class="row">
+    <div class="col-5 form">
+      <app-form (addQuote)="displayDetails($event)"></app-form>
+    </div>
+    <hr>
+  <div class="col-6 quotes">
+    <h2>Explore more Quotes</h2>
+    <div class="yea">
+      <div *ngFor="let out of quotes; let i = index" class="show">
+        <div>
+          <p
+            appHighlight
+            *ngIf="favoriteQuote() === out.upvotes && out.upvotes > 0"
+          >
+            <app-quotedetails [quote]="out"></app-quotedetails>
+          </p>
+          <p *ngIf="favoriteQuote() !== out.upvotes || out.upvotes === 0">
+            <app-quotedetails [quote]="out"></app-quotedetails>
+          </p>
+
+          <div class="buttons">
+            <button class="btn btn-success" (click)="upVotes(i)">Upvote</button>
+            <button class="btn btn-warning" (click)="downVotes(i)">
+              Downvote
+            </button>
+            <button class="btn btn-danger" (click)="deleteQuote(i)">
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
