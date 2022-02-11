@@ -1,15 +1,19 @@
 <div class="container-fluid">
   <h2>If it inspires you, it will inspire another</h2>
-  <form #quoteFxorm="ngForm" (ngSubmit)="submitQuote()" #thisForm="ngForm" novalidate>
+  <form #quoteForm="ngForm" (ngSubmit)="submitQuote()" #thisForm="ngForm" novalidate>
     <div class="form-group">
       <label>What's you quote?</label>
       <textarea
         name="quote"
         class="form-control"
+        #quote="ngModel"
+        [class.is-invalid]="quote.invalid && quote.touched"
         id="quote"
         [(ngModel)]="enterQuote.quote"
         placeholder="What is that inspiring quote?"
+        required
       ></textarea>
+      <small class="text-danger" [class.d-none]="quote.valid || quote.untouched">Quote is Required</small>
     </div>
     <div class="form-group">
       <label>Quote Author</label>
@@ -17,10 +21,14 @@
         type="text"
         name="author"
         class="form-control"
+        #author="ngModel"
+        [class.is-invalid]="author.invalid && author.touched"
         id="author"
         [(ngModel)]="enterQuote.author"
         placeholder="Who gave or said this quote?"
+        required        
       />
+      <small class="text-danger" [class.d-none]="author.valid || author.untouched">Author is Required</small>
     </div>
     <div class="form-group">
       <label>Quote Submitter</label>
@@ -28,12 +36,16 @@
         type="text"
         name="submitter"
         class="form-control"
+        #submitter="ngModel"
+        [class.is-invalid]="submitter.invalid && submitter.touched"
         id="submitter"
         [(ngModel)]="enterQuote.submitter"
         placeholder="Who is submitting the quote?"
+        required
       />
+      <small class="text-danger" [class.d-none]="submitter.valid || submitter.untouched">Author is Required</small>
     </div>
-    <button type="submit" class="btn btn-primary" onsubmit="reset()">
+    <button [disabled]="quoteForm.form.invalid" type="submit" class="btn btn-primary" onsubmit="reset()">
       Submit Quote
     </button>
   </form>
