@@ -19,7 +19,7 @@ Delete the quotes added
 on the delete button to delete a quote. 
 ## Demo
 Upon successfully loading the page, this is what you will diplayed with:
-![alt text](/home/kk/Documents/moringa_core/updownvotes/src/assets/images/demo.png)
+![alt text](https://github.com/KaranjaK/updownvotes/blob/master/src/assets/images/demo.png)
 ## Known Bugs
 At the moment of this release, there were no known bugs. In the event you come across any, kindly reach ouch to us via the support contact provided below. 
 ## Technologies Used
