@@ -1,16 +1,27 @@
 # Up and Down Vote
-#### Simply add, vote for or against and delete quote, February 2021
+#### Add, vote for or against and delete quote, February 2021
 #### By *Kelvin Karanja*
 ## Description
 The system provides a chance for one to add a quote they like.
 View as well vote for other quotes. 
 Delete the quotes added
 ## Setup/Installation Requirements
+# Requirements 
 * Have a smart gadget that is configure to access the internet
 * Have stable internet connection
 * Have an up to date Browser
+# Setup/Installation
+* Open your browser and navigate to to your search input
+* Type in or copy the following address in the search bar: https://karanjak.github.io/updownvotes/
+* Press search
+* To add your quote, kindly fill in the form provided giving the quote, quote author and the name of who is submitting the quote.
+* To vote for a quote, click on the upvote button, to vote against it, click on the downvote button and 
+on the delete button to delete a quote. 
+## Demo
+Upon successfully loading the page, this is what you will diplayed with:
+![alt text](/home/kk/Documents/moringa_core/updownvotes/src/assets/images/demo.png)
 ## Known Bugs
-There are no known bugs to date
+At the moment of this release, there were no known bugs. In the event you come across any, kindly reach ouch to us via the support contact provided below. 
 ## Technologies Used
 * Angular 8
 * TypeScript
