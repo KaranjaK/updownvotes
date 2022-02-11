@@ -1,27 +1,45 @@
-*{
+* {
   overflow-x: hidden;
+  color: whitesmoke;
 }
-h2{
+.container-fluid {
+  background-image: linear-gradient(to bottom, rgb(13, 17, 55, 0.8), rgba(3, 17, 55, 0.8)), url(../../assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content {
+  font-family: Tangerine;
+  color: whitesmoke;
+  font-size: 6rem;
+  font-weight: 900;
+  text-align: center;
+}
+h2 {
   font-family: Lobster;
   margin: 2rem;
   text-align: center;
   font-size: 3rem;
 }
-.yea{
-  display: grid;
-  grid-template-columns: 30rem 1fr;
+.form {
+  width: 45%;
+  text-align: center;
+  margin-top: 20rem;
 }
-.content{
-  font-family: Tangerine;
-  color: whitesmoke;
-  font-size: 3rem;
+hr {
+  margin-top: 16rem;
+  background-color: whitesmoke;
+  width: 0.5rem;
+  height: 36rem;
 }
-.show{
+.quotes {
+  margin: 3rem;
+}
+.show {
   padding-left: 6rem;
   padding-top: 2rem;
   width: 30rem;
   text-align: center;
 }
-.btn{
+.btn {
   margin: 1rem;
 }
