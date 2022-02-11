@@ -13,10 +13,10 @@ export class QuotedisplayComponent implements OnInit {
   @Input() quoteDisplay: any;
   @Input() upvotes=0;
   @Input() downvotes=0;
-  quotes = [new Quotes('Yes we can', 'Barrack Obama','KelvinK'),
-  new Quotes('I have a dream', 'Martin Luther Kind Jnr.','Marcus Kim'),
-  new Quotes('No human is limited', 'Eliud Kipchoge','Jemutai Melanie'),
-  new Quotes('Arise and Shine', 'Prophet Isaiah','Rev. T. D. Jakes')
+  quotes = [new Quotes('Yes we can', 'Barrack Obama','KelvinK', new Date('2022, 02, 09')),
+  new Quotes('I have a dream', 'Martin Luther Kind Jnr.','Marcus Kim', new Date('2022, 02, 09')),
+  new Quotes('No human is limited', 'Eliud Kipchoge','Jemutai Melanie', new Date('2022, 02, 09')),
+  new Quotes('Arise and Shine', 'Prophet Isaiah','Rev. T. D. Jakes', new Date('2022, 02, 09'))
 ];
 
   highestVote!: number;
@@ -46,7 +46,7 @@ export class QuotedisplayComponent implements OnInit {
      this.highestVote = 0
      this.voteNumber = 0
 
-     for(this.voteCounter=0; this.voteCounter < this.quotes.length; this.voteCounter){
+     for(this.voteCounter=0; this.voteCounter < this.quotes.length; this.voteCounter++){
        this.voteNumber = this.quotes[this.voteCounter].upvotes;
        if(this.voteNumber > this.highestVote){
          this.highestVote = this.voteNumber
